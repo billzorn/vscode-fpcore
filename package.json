@@ -1,0 +1,25 @@
+{
+    "name": "vscode-fpcore",
+    "displayName": "FPCore",
+    "description": "Language support for FPCore floating-point benchmarks",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.29.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "fpcore",
+            "aliases": ["FPCore", "fpcore"],
+            "extensions": [".fpcore"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "fpcore",
+            "scopeName": "source.fpcore",
+            "path": "./syntaxes/fpcore.tmLanguage.json"
+        }]
+    }
+}

@@ -1,0 +1,61 @@
+{
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "FPCore",
+    "patterns": [
+	{
+	    "include": "#keywords"
+	},
+        {
+	    "include": "#constants"
+	},
+	{
+	    "include": "#strings"
+	}
+    ],
+    "repository": {
+	"keywords": {
+	    "patterns": [
+                {
+		    "name": "keyword.fpcore",
+		    "match": "(?<![a-zA-Z0-9~!@$%^&*_\\-+=<>.?/:])FPCore"
+		},
+                {
+		    "name": "keyword.control.fpcore",
+		    "match": "(if|let|while)"
+		}
+            ]
+	},
+        "constants": {
+	    "patterns": [
+                {
+		    "name": "constant.fpcore",
+		    "match": "(E|LOG2E|LOG10E|LN2|LN10|PI|PI_2|PI_4|M_1_PI|M_2_PI|M_2_SQRTPI|SQRT2|SQRT1_2|INFINITY|NAN|TRUE|FALSE)"
+		},
+                {
+		    "name": "constant.numeric.rational.fpcore",
+		    "match": "[+-]?[0-9]+/[0-9]*[1-9][0-9]*"
+		},
+                {
+		    "name": "constant.numeric.hexadecimal.fpcore",
+		    "match": "[+-]?0x([0-9a-f]+(\\.[0-9a-f]+)?|\\.[0-9a-f]+)(p[-+]?[0-9]+)?"
+		},
+                {
+		    "name": "constant.numeric.decimal.fpcore",
+		    "match": "[-+]?([0-9]+(\\.[0-9]+)?|\\.[0-9]+)(e[-+]?[0-9]+)?"
+		}
+            ]
+	},
+	"strings": {
+	    "name": "string.quoted.double.fpcore",
+	    "begin": "\"",
+	    "end": "\"",
+	    "patterns": [
+		{
+		    "name": "constant.character.escape.fpcore",
+		    "match": "\\\\."
+		}
+	    ]
+	}
+    },
+    "scopeName": "source.fpcore"
+}
